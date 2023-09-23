@@ -28,7 +28,7 @@ setw() {
 
 main() {
   local theme
-  theme="$(get_tmux_option "@onedark_flavour" "warmer")"
+  theme="$(get_tmux_option "@onedark_flavour" "mocha")"
 
   # Aggregate all commands in one array
   local tmux_commands=()
@@ -36,7 +36,7 @@ main() {
   # NOTE: Pulling in the selected theme by the theme that's being set as local
   # variables.
   # shellcheck source=catppuccin-frappe.tmuxtheme
-  source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/catppuccin-${theme}.tmuxtheme")"
+  source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/onedark-${theme}.tmuxtheme")"
 
   # status
   set status "on"
